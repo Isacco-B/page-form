@@ -26,10 +26,10 @@ model Form {
   visits      Int @default(0)
   submissions Int @default(0)
 
-  shareURL String @default(uuid())
+  shareURL String @unique @default(uuid())
   FormSubmissions FormSubmissions[]
 
-  @@unique([name, userId, id])
+  @@unique([name, userId, id, shareURL])
 }
 
 model FormSubmissions {

@@ -1,5 +1,5 @@
+import React, { Suspense } from "react";
 import { Getforms, GetFormsStats } from "@/actions/form";
-import CreateFormBtn from "@/components/create-form-btn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +23,7 @@ import {
   Waypoints,
 } from "lucide-react";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import CreateFormBtn from "@/components/create-form-btn";
 
 export default function DashboardPage() {
   return (
@@ -101,7 +101,7 @@ function StatsCards(props: CardStatsProps) {
   );
 }
 
-function StatsCard({
+export function StatsCard({
   title,
   icon,
   helperText,
@@ -170,7 +170,7 @@ function FormCard({ form }: { form: Form }) {
         </CardTitle>
         <CardDescription className="flex items-center justify-between text-muted-foreground text-sm">
           {formatDistance(form.createdAt, new Date(), { addSuffix: true })}
-          {!form.published && (
+          {form.published && (
             <span className="flex items-center gap-2">
               <Eye className="h-4 w-4 text-muted-foreground" />
               <span>{form.visits.toLocaleString()}</span>
