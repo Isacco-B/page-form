@@ -9,9 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Form {
@@ -33,10 +32,12 @@ model Form {
 }
 
 model FormSubmissions {
-  id Int @default(autoincrement()) @unique
+  id          Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   formId Int
   form Form @relation(fields: [formId], references: [id])
 
   content String
+  
+  @@unique([id])
 }
