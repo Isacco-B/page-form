@@ -67,35 +67,35 @@ function StatsCards(props: CardStatsProps) {
     <div className="w-full pt-8 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
       <StatsCard
         title="Total visits"
-        icon={<Eye className="h-4 w-4 text-blue-600" />}
+        icon={<Eye className="h-4 w-4" />}
         helperText="All time form visits"
         loading={loading}
         value={data?.visits.toLocaleString() || ""}
-        className="shadow-md shadow-blue-600"
+        className="shadow-none border-2"
       />
       <StatsCard
         title="Total submissions"
-        icon={<NotepadText className="h-4 w-4 text-yellow-600" />}
+        icon={<NotepadText className="h-4 w-4" />}
         helperText="All time form submissions"
         loading={loading}
         value={data?.submissions.toLocaleString() || ""}
-        className="shadow-md shadow-yellow-600"
+        className="shadow-none border-2"
       />
       <StatsCard
         title="Submissions rate"
-        icon={<MousePointerClick className="h-4 w-4 text-green-600" />}
+        icon={<MousePointerClick className="h-4 w-4" />}
         helperText="Visits that result in form submissions"
         loading={loading}
         value={data?.submissionsRate.toLocaleString() + "%" || ""}
-        className="shadow-md shadow-green-600"
+        className="shadow-none border-2"
       />
       <StatsCard
         title="Bounce rate"
-        icon={<Waypoints className="h-4 w-4 text-red-600" />}
+        icon={<Waypoints className="h-4 w-4" />}
         helperText="Visits that leaves without interacting"
         loading={loading}
         value={data?.submissionsRate.toLocaleString() + "%" || ""}
-        className="shadow-md shadow-red-600"
+        className="shadow-none border-2"
       />
     </div>
   );

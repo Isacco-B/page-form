@@ -53,35 +53,35 @@ export default async function FormDetailPage({
       <div className="w-full pt-8 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <StatsCard
           title="Total visits"
-          icon={<Eye className="h-4 w-4 text-blue-600" />}
+          icon={<Eye className="h-4 w-4" />}
           helperText="All time form visits"
           loading={false}
           value={visits.toLocaleString() || ""}
-          className="shadow-md shadow-blue-600"
+          className="shadow-none border-2"
         />
         <StatsCard
           title="Total submissions"
-          icon={<NotepadText className="h-4 w-4 text-yellow-600" />}
+          icon={<NotepadText className="h-4 w-4" />}
           helperText="All time form submissions"
           loading={false}
           value={submissions.toLocaleString() || ""}
-          className="shadow-md shadow-yellow-600"
+          className="shadow-none border-2"
         />
         <StatsCard
           title="Submissions rate"
-          icon={<MousePointerClick className="h-4 w-4 text-green-600" />}
+          icon={<MousePointerClick className="h-4 w-4" />}
           helperText="Visits that result in form submissions"
           loading={false}
           value={submissionsRate.toLocaleString() + "%" || ""}
-          className="shadow-md shadow-green-600"
+          className="shadow-none border-2"
         />
         <StatsCard
           title="Bounce rate"
-          icon={<Waypoints className="h-4 w-4 text-red-600" />}
+          icon={<Waypoints className="h-4 w-4" />}
           helperText="Visits that leaves without interacting"
           loading={false}
           value={submissionsRate.toLocaleString() + "%" || ""}
-          className="shadow-md shadow-red-600"
+          className="shadow-none border-2"
         />
       </div>
       <div className="pt-10">
