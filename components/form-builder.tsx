@@ -21,6 +21,7 @@ import DragOverlayWrapper from "./drag-overlay-wrapper";
 import useDesigner from "./hooks/use-designer";
 import Link from "next/link";
 import Confetti from "react-confetti";
+import DeleteFormBtn from "./delete-form-btn";
 
 export default function FormBuilder({ form }: { form: Form }) {
   const [isReady, setIsReady] = useState<boolean>(false);
@@ -125,6 +126,7 @@ export default function FormBuilder({ form }: { form: Form }) {
               <>
                 <SaveFormBtn id={form.id}/>
                 <PublishFormBtn id={form.id}/>
+                <DeleteFormBtn id={form.id}/>
               </>
             )}
           </div>
