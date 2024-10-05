@@ -115,6 +115,20 @@ export async function UpdateFormContent(id: number, jsonContent: string) {
   });
 }
 
+export async function DeleteForm(id: number) {
+  const user = await currentUser();
+  if (!user) {
+    throw new UserNotFoundError();
+  }
+
+  await prisma.form.delete({
+    where: {
+      userId: user.id,
+      id: id,
+    },
+  });
+}
+
 export async function PublishForm(id: number) {
   const user = await currentUser();
   if (!user) {
